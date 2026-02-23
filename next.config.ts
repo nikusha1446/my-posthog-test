@@ -9,6 +9,10 @@ const nextConfig = {
         source: '/ingest/:path*',
         destination: 'https://eu.i.posthog.com/:path*',
       },
+      {
+        source: '/ingest/decide',
+        destination: 'https://eu.i.posthog.com/decide',
+      },
     ];
   },
 };
