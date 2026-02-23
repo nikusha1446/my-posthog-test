@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import { PostHogProvider } from './providers';
+import { PHProvider } from './providers';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -20,14 +20,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body>
-        <PostHogProvider>{children}</PostHogProvider>
-      </body>
+      <PHProvider>
+        <body>{children}</body>
+      </PHProvider>
     </html>
   );
 }
